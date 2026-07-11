@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEJIS AI Interview — Upload your resume to begin the mock interview.">
+  <title>Resume Upload — SEJIS Interview</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/interview.css">
+</head>
+<body class="interview-page">
+
+  <!-- ========== HEADER ========== -->
+  <header class="interview-header">
+    <div class="interview-header-inner">
+      <a href="dashboard.html" class="interview-brand" id="interview-back-btn">
+        <div class="interview-brand-icon">S</div>
+        <span>SEJIS Interview</span>
+      </a>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Dashboard
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== PROGRESS BAR ========== -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-inner">
+      <div class="progress-steps">
+        <div class="progress-step active">
+          <div class="progress-step-circle">1</div>
+          <span class="progress-step-label">Resume</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">2</div>
+          <span class="progress-step-label">Intro</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">3</div>
+          <span class="progress-step-label">DSA</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">4</div>
+          <span class="progress-step-label">System Design</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">5</div>
+          <span class="progress-step-label">Final</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="interview-content">
+
+    <!-- Phase 0: Resume Upload -->
+    <div class="phase-section active" id="phase-upload">
+      <div class="phase-card">
+        <div class="phase-card-header">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+            Upload Your Resume
+          </h3>
+        </div>
+        <div class="phase-card-body">
+          <p class="mb-6 text-muted">Upload your resume in PDF format. Our AI will analyze it and determine the most suitable job role for your interview.</p>
+
+          <div class="upload-zone" id="upload-zone">
+            <input type="file" id="resume-file" accept=".pdf,application/pdf">
+            <div class="upload-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <h4 id="upload-text">Drag & drop your PDF here</h4>
+            <p id="upload-hint">or click to browse files</p>
+            <p class="text-xs text-muted mt-2" id="upload-file-name"></p>
+          </div>
+
+          <!-- Role display (hidden until upload) -->
+          <div class="role-display hidden" id="role-display">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p id="role-text"></p>
+          </div>
+
+          <div class="phase-actions">
+            <button class="btn btn-primary btn-lg hidden" id="upload-resume-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Upload &amp; Analyze
+            </button>
+            <button class="btn btn-success btn-lg hidden" id="start-interview-btn">
+              Start Interview
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/interview.js"></script>
+
+</body>
+</html>

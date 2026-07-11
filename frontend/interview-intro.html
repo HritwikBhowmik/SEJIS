@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEJIS AI Interview — Introduction phase with timed voice interaction.">
+  <title>Introduction — SEJIS Interview</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/interview.css">
+</head>
+<body class="interview-page">
+
+  <!-- ========== HEADER ========== -->
+  <header class="interview-header">
+    <div class="interview-header-inner">
+      <a href="dashboard.html" class="interview-brand" id="interview-back-btn">
+        <div class="interview-brand-icon">S</div>
+        <span>SEJIS Interview</span>
+      </a>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Dashboard
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== PROGRESS BAR ========== -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-inner">
+      <div class="progress-steps">
+        <div class="progress-step completed">
+          <div class="progress-step-circle">1</div>
+          <span class="progress-step-label">Resume</span>
+        </div>
+        <div class="progress-step active">
+          <div class="progress-step-circle">2</div>
+          <span class="progress-step-label">Intro</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">3</div>
+          <span class="progress-step-label">DSA</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">4</div>
+          <span class="progress-step-label">System Design</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-step-circle">5</div>
+          <span class="progress-step-label">Final</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="interview-content">
+
+    <!-- Phase 1: Introduction -->
+    <div class="phase-section active" id="phase-intro">
+      <div class="phase-card">
+        <div class="phase-card-header">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Phase 1 — Introduction
+          </h3>
+          <div class="flex items-center gap-3">
+            <div class="speaking-indicator hidden" id="intro-speaking">
+              <div class="speaking-bars"><span></span><span></span><span></span><span></span></div>
+              Speaking
+            </div>
+            <div class="timer-display" id="intro-timer">05:00</div>
+          </div>
+        </div>
+        <div class="phase-card-body">
+
+          <!-- Loading -->
+          <div class="phase-loading" id="intro-loading">
+            <div class="spinner spinner-dark"></div>
+            Loading introduction question...
+          </div>
+
+          <div id="intro-content">
+            <!-- Question -->
+            <div class="question-display">
+              <div class="question-text" id="intro-question-text">Loading question...</div>
+            </div>
+
+            <!-- Speech Input -->
+            <div class="speech-controls">
+              <div class="speech-indicator listening" id="intro-stt-indicator">
+                <div class="speech-dot"></div>
+                <span>Listening... Speak your answer</span>
+              </div>
+              <textarea class="transcript-area" id="intro-transcript" placeholder="Your spoken response will appear here. You can also type your answer..."></textarea>
+            </div>
+
+            <div class="phase-actions">
+              <button class="btn btn-primary btn-lg" id="intro-next-btn">
+                Next Phase
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/interview.js"></script>
+
+</body>
+</html>

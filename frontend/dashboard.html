@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your SEJIS dashboard — view interview history, scores, and download performance reports.">
+  <title>Dashboard — SEJIS</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-page">
+
+  <!-- ========== HEADER ========== -->
+  <header class="dash-header">
+    <div class="dash-header-inner">
+      <a href="dashboard.html" class="dash-brand">
+        <div class="dash-brand-icon">S</div>
+        <span class="dash-brand-text">SEJIS</span>
+      </a>
+      <div class="dash-user-actions">
+        <a href="interview-upload.html" class="btn btn-primary btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Interview
+        </a>
+        <button class="btn btn-ghost btn-sm" id="logout-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="dash-content fade-in">
+
+    <!-- Welcome -->
+    <div class="dash-welcome">
+      <h1>Interview Dashboard</h1>
+      <p>Track your interview performance and download detailed reports.</p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="dash-stats" id="stats-section">
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-total">0</h3>
+          <p>Total Interviews</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-avg">0</h3>
+          <p>Average Score</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-best">0</h3>
+          <p>Best Score</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interview History Table -->
+    <div class="dash-table-section">
+
+      <div class="dash-table-header">
+        <h3>Interview History</h3>
+        <a href="interview-upload.html" class="btn btn-primary btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Start New Interview
+        </a>
+      </div>
+
+      <!-- Table -->
+      <div class="dash-table-wrap" id="table-wrap">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Job Role</th>
+              <th>Intro</th>
+              <th>DSA</th>
+              <th>System Design</th>
+              <th>HR Final</th>
+              <th>Total</th>
+              <th>Date</th>
+              <th>Report</th>
+            </tr>
+          </thead>
+          <tbody id="dashboard-table-body">
+            <!-- Rows rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <h4>No Interviews Yet</h4>
+        <p>Start your first AI-powered mock interview and your results will appear here.</p>
+        <a href="interview-upload.html" class="btn btn-primary">Start Your First Interview</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>
